@@ -10,7 +10,9 @@
     "test": "npm run test:server && npm run test:client",
     "test:client": "karma start app/karma.conf.js --single-run",
     "test:server": "mocha --recursive",
-    "watch": "gulp"
+    "watch": "gulp",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "async": "^1.5.2",
@@ -39,7 +41,8 @@
     "nodemailer": "^2.3.0",
     "request": "^2.69.0",
     "vinyl-buffer": "^1.0.0",
-    "yargs": "^4.3.2"
+    "yargs": "^4.3.2",
+    "snyk": "^1.53.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -56,5 +59,6 @@
   },
   "engines": {
     "node": "6.1.0"
-  }
+  },
+  "snyk": true
 }
